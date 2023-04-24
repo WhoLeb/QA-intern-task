@@ -11,7 +11,6 @@ def shunting_yard(expression):
             if token not in ['+', '-', '*', '/', '(', ')']:
                 out_queue.append(token)
             if token in ['+', '-', '*', '/']:
-                print("operator")
                 while op_stack and op_stack[-1] in ['+', '-', '*', '/'] and (is_greater_precedence(op_stack[-1], token)):
                     out_queue.append(op_stack.pop())
                 op_stack.append(token)
